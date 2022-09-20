@@ -1,6 +1,9 @@
 <template>
- <h1>Peng Reaction Timer</h1>
-  
+<div>
+  <h1>Peng Reaction Timer</h1>
+  <button @click="start">play</button>
+</div>
+ 
 </template>
 
 <script>
@@ -8,8 +11,19 @@
 
 export default {
   name: 'App',
-  components: {
-   
+  components: {},
+  data(){
+    return {
+      isplaying: false,
+      delay: null,
+    }
+  },
+  methods: {
+    start(){
+      this.isplaying=true
+      this.delay = 2000+Math.random()*5000
+      
+    }
   }
 }
 </script>
@@ -20,7 +34,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #444;
   margin-top: 60px;
 }
 </style>
